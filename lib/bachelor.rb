@@ -43,13 +43,13 @@ def get_occupation(data, hometown)
 end
 
 def get_average_age_for_season(data, season)
-  girls_age = []
+  girls_average_age = []
   data.each do |season_num, contestant_info|
     if season_num == season
       contestant_info.each do |contestant, value|
-         girls_age.push(contestant["age"].to_f)
+         girls_average_age.push(contestant["age"].to_f)
       end
     end
   end
-  return (girls_age.inject{ |sum, el| sum + el } / girls_age.size).round
+  return (girls_average_age.inject{ |sum, el| sum + el } / girls_average_age.size).round
 end
